@@ -3,20 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/login">
-
-    <fragment
-        android:id="@+id/login"
-        android:name="com.rohit.e_commerce.Login"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+    app:startDestination="@id/registration">
     <fragment
         android:id="@+id/registration"
         android:name="com.rohit.e_commerce.Registration"
         android:label="fragment_registration"
-        tools:layout="@layout/fragment_registration" >
+        tools:layout="@layout/fragment_registration">
         <action
             android:id="@+id/action_registration_to_login"
             app:destination="@id/login" />
     </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.rohit.e_commerce.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_categories"
+            app:destination="@id/categories" />
+    </fragment>
+    <fragment
+        android:id="@+id/categories"
+        android:name="com.rohit.e_commerce.Categories"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" >
+        <action
+            android:id="@+id/action_categories_to_subCategory"
+            app:destination="@id/subCategory" />
+    </fragment>
+    <fragment
+        android:id="@+id/subCategory"
+        android:name="com.rohit.e_commerce.SubCategory"
+        android:label="fragment_sub_category"
+        tools:layout="@layout/fragment_sub_category" />
 </navigation>

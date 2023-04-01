@@ -17,36 +17,110 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/tvName"
+        android:text="Enter your Name"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etName"
+        android:layout_marginHorizontal="20dp"
+        android:inputType="text"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/tvPhone"
         android:text="Phone Number"
         android:layout_marginHorizontal="20dp"
         android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/etNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:maxLength="10"
+        android:inputType="number"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvPass"
-        android:text="Enter your Name"
+        android:text="Enter Email"
         android:layout_marginHorizontal="20dp"
         android:textSize="20sp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etEmail"
+        android:layout_marginHorizontal="20dp"
+        android:inputType="textEmailAddress"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvName"
-        android:text="Enter your Name"
+        android:id="@+id/tvConf"
+        android:text="Enter Password"
         android:layout_marginHorizontal="20dp"
         android:textSize="20sp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPass"
+        android:layout_marginHorizontal="20dp"
+        android:maxLength="6"
+       android:inputType="textPassword"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvName"
-        android:text="Enter your Name"
+        android:id="@+id/tvGender"
+        android:text="Gender"
         android:layout_marginHorizontal="20dp"
         android:textSize="20sp"/>
-    <TextView
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvName"
-        android:text="Enter your Name"
+        android:id="@+id/Rgbtn">
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/male"
         android:layout_marginHorizontal="20dp"
-        android:textSize="20sp"/>
+        android:text="Male"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/female"
+        android:layout_marginHorizontal="20dp"
+        android:text="Female"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/others"
+        android:layout_marginHorizontal="20dp"
+        android:text="Others" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etOthers"
+        android:layout_marginHorizontal="20dp"
+        android:visibility="gone"
+        android:hint="Enter Your Gender"
+     android:inputType="text"/>
+    </RadioGroup>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="20dp"
+        android:text="Register"
+        android:id="@+id/btnRegister"/>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tvUser"
+    android:text="Already have a User"
+    android:gravity="center_horizontal"
+    android:textStyle="bold"
+    android:layout_marginTop="20dp"/>
+
 </LinearLayout>

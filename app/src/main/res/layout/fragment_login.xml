@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Login"
-    >
+    tools:context=".Login">
 
     <!-- TODO: Update blank fragment layout -->
     <EditText
@@ -14,14 +13,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/etEmail"
         android:layout_marginHorizontal="30dp"
-        android:maxLength="1"
+        android:inputType="textEmailAddress"
         android:hint="email" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etPass"
         android:layout_marginHorizontal="30dp"
-        android:maxLength="1"
+        android:inputType="textPassword"
         android:hint="password" />
     <Button
         android:layout_width="match_parent"

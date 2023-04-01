@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.rohit.e_commerce.databinding.FragmentLoginBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,10 +27,14 @@ class Login : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var binding: FragmentLoginBinding
+    lateinit var binding:FragmentLoginBinding
+      var auth=Firebase.auth
+
+    private lateinit var mainActivity: MainActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        mainActivity=activity as MainActivity
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -44,14 +53,23 @@ class Login : Fragment() {
             } else if (binding.etPass.text.isEmpty()) {
                 binding.etPass.error = "enter password"
             } else {
+                auth.signInWithEmailAndPassword(
+                    binding.etEmail.text.toString(),
+                    binding.etPass.text.toString()
+                )
+                    .addOnSuccessListener {
+                        findNavController().navigate(R.id.categories)
+                        Toast.makeText(requireActivity(), "Login Successfully", Toast.LENGTH_LONG)
+                            .show()
+                    }.addOnFailureListener {
+                        System.out.println("Error $it")
+                        Toast.makeText(requireActivity(), "Login Failed", Toast.LENGTH_LONG).show()
+                    }
 
             }
-
-
         }
         return binding.root
     }
-
     companion object {
         /**
          * Use this factory method to create a new instance of
